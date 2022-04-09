@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 const getResults = ({ term, setRes }) => {
   const movies = [
-    {name: 'The Dark Knight Rises', year: 2012},
-    {name: 'The Batman', year: 2022}
+    {id: 0, name: 'The Dark Knight Rises', year: 2012},
+    {id: 1, name: 'The Batman', year: 2022}
   ]
   setRes(movies.filter(movie => movie.name.toLowerCase().includes(term.toLowerCase())))
 }
@@ -25,6 +25,10 @@ const useField = ({ type, setRes }) => {
     type, value, onChange
   }
 }
+
+// const fillField = ({ id, guessField }) => {
+//   guessField.
+// }
 
 const GuessInput = () => {
   const inputStyle = {
@@ -54,7 +58,7 @@ const GuessInput = () => {
       <input style={inputStyle} placeholder='Search for a movie' {...guessInput} />&nbsp;<input style={buttonStyle} type='button' value='Submit' />
       <br /><br />
       {results.map ((result) => (
-        <p key={result.name} style={{color: 'white', fontFamily: 'serif', fontSize: '14pt'}}>{result.name}</p>
+        <p key={result.id} style={{color: 'white', fontFamily: 'serif', fontSize: '14pt'}}>{result.name}</p>
       ))}
     </div>
   )

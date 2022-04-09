@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import GuessBox from './components/GuessBox'
-import Picture from './components/Picture'
 import Pictures from './components/Pictures'
 import GuessInput from './components/GuessInput'
 import './index.css'
 
 const App = () => {
+  const [pics, setPics] = useState(0)
   return (
     <div align='center'>
       <div align="center"><h1 style={{fontFamily: 'serif', fontSize: '40px', color: 'white'}}>Actordle</h1></div>
@@ -22,9 +22,8 @@ const App = () => {
       <br />
       <div style={{border: '0.5px solid white'}} />
       <br />
-      <Pictures />
+      <Pictures num={5} />
       <GuessInput />
-      {/* <img style={{width: '150px'}} alt='Dwayne Johnson' src=''/> */}
       <br />
     </div>
   )
