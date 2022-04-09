@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 
+let movies = []
+let movie_data = require("../IMDB_Top250Movies.json")
+for (let i = 0; i < movie_data.items.length; i++) {
+  movies[i] = {id: movie_data.items[i].id, name: movie_data.items[i].fullTitle};
+}
+
 const getResults = ({ term, setRes }) => {
-  const movies = [
-    {id: 0, name: 'The Dark Knight Rises', year: 2012},
-    {id: 1, name: 'The Batman', year: 2022}
-  ]
   setRes(movies.filter(movie => movie.name.toLowerCase().includes(term.toLowerCase())))
 }
 
