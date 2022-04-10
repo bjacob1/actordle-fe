@@ -15,7 +15,18 @@ for (let i = 0; i < movie_data.items.length; i++) {
 //   {id: 1, name: 'The Batman', year: 2022}
 // ]
 
-const movie = { id: 0, name: 'The Batman', year: 2022}
+const movie = movies[Math.floor(Math.random()*movies.length)]
+console.log("Movie Name: ", movie.name)
+const url = "https://imdb-api.com/API/FullCast/k_p0ydpr03/" + movie.id
+
+fetch(url)
+  .then((response) => {
+    // console.log(response.json())
+    return response.json()
+  })
+  .then(actor_data => {
+    console.log(actor_data.actors[0].name)
+  })
 
 // const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
 //   if(id === movie.id) {
