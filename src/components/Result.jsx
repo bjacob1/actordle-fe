@@ -7,7 +7,7 @@ const Result = ({ id, name, addGuess, guesses, setGuesses, num, setNum }) => {
   }
   return (
     <div>
-      <p style={{color: 'white', fontFamily: 'serif', fontSize: '14pt'}} onClick={guess}>{name}</p>
+      <p style={{cursor: 'pointer', color: 'white', fontFamily: 'serif', fontSize: '14pt'}} onClick={guess}>{name}</p>
     </div>
   )
 }
