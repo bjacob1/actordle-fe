@@ -5,14 +5,15 @@ import GuessInput from './components/GuessInput'
 import './index.css'
 
 let movies = []
-let movie_data = require("./IMDB_Top250Movies.json")
+let movie_data = require("./IMDB_MostPopularMovies.json")
 for (let i = 0; i < movie_data.items.length; i++) {
   movies[i] = {id: movie_data.items[i].id, name: movie_data.items[i].fullTitle, year: movie_data.items[i].year};
 }
 
 const movie = movies[Math.floor(Math.random()*movies.length)]
 console.log("Movie Name: ", movie.name)
-const url = "https://imdb-api.com/API/FullCast/k_8ufem85h/" + movie.id
+const url = "https://imdb-api.com/API/FullCast/k_mnxul196/" + movie.id
+const img_url =   'https://kgsearch.googleapis.com/v1/entities:search?query=brad%20pitt&key=[YOUR_API_KEY]'
 
 const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
   if (num > 5) {
