@@ -15,7 +15,7 @@ console.log("Movie Name: ", movie.name)
 const url = "https://imdb-api.com/API/FullCast/k_8ufem85h/" + movie.id
 
 const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
-  if(num > 5) {
+  if (num > 5) {
     return
   }
   if(id === movie.id) {
@@ -26,6 +26,9 @@ const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
     let currMovie = movies.filter((movie) => movie.id === id)[0]
     let new_arr = guesses
     new_arr.push({ name: currMovie.name, year: currMovie.year, correct: false })
+    if (num == 5) {
+      new_arr.push({ name: movie.name, year: movie.year, correct: true })
+    }
     setGuesses(new_arr)
   }
   setNum(num + 1)
