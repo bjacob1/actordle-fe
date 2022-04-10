@@ -48,7 +48,7 @@ const GuessInput = ({ movies, addGuess, guesses, setGuesses, num, setNum }) => {
   const guessInput = useField({ value, setValue, type: 'text', setRes: setResults, movies: movies })
   return (
     <div>
-      <input style={{width: '730px'}} placeholder='Search for a movie' {...guessInput} />
+      <input style={{width: '48.5%'}} placeholder='Search for a movie' {...guessInput} />
       <br />
       {results.map ((result) => (
         <Result key={result.id} setValue={setValue} id={result.id} setResults={setResults} addGuess={addGuess} name={result.name} guesses={guesses} setGuesses={setGuesses} num={num} setNum={setNum} />
