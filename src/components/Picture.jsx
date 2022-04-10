@@ -2,7 +2,7 @@ import React from 'react'
 
 const Picture = ({ show, url }) => {
   const style = {
-    width: '118px',
+    width: '7.9%',
     padding: '5px'
   }
   if(show) {

@@ -27,7 +27,7 @@ const GuessInput = ({ movies, addGuess, guesses, setGuesses, num, setNum }) => {
     border: '0.5px solid white',
     padding: '15px',
     // width: '630px',
-    width: '750px',
+    width: '50%',
     color: 'white',
     size: '20',
     fontSize: '14pt'

@@ -4,7 +4,7 @@ const GuessBox = ({ name, year, correct, next }) => {
   if(next !== undefined && next === true) {
     return (
       <div align='center'>
-        <div style={{ width: '750px', border: '1.9px solid white', padding: '0px', margin: '0.5em'}} align='center'><p style={{color: 'white'}}>{name}&nbsp;</p></div>
+        <div style={{ width: '50%', border: '1.9px solid white', padding: '0px', margin: '0.5em'}} align='center'><p style={{color: 'white'}}>{name}&nbsp;</p></div>
       </div>
     )
   }
@@ -18,7 +18,7 @@ const GuessBox = ({ name, year, correct, next }) => {
   else if(correct) {
     return (
       <div align='center'>
-        <div class="guess" style={{ backgroundColor: 'green', width: '750px', border: '0.5px solid green', padding: '0px', margin: '0.5em'}} align='center'><p style={{color: 'white'}}>{name}&nbsp;</p></div>
+        <div class="guess" style={{ backgroundColor: 'green', width: '50%', border: '0.5px solid green', padding: '0px', margin: '0.5em'}} align='center'><p style={{color: 'white'}}>{name}&nbsp;</p></div>
       </div>
     )
   } else {

@@ -48,7 +48,7 @@ const App = () => {
   return (
     <div align='center'>
       <div align="center"><h1>Actordle</h1></div>
-      <div style={{border: '0.5px solid white'}} />
+      <div style={{width: '100%', border: '0.5px solid white'}} />
       <br />
       <Guesses guesses={guesses} num={num} />
       {/* <br />

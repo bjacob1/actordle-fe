@@ -21,7 +21,7 @@ input[type=text] {
     background-color: #242729;
     border: 0.5px solid gray;
     padding: 15px;
-    width: 750px;
+    width: 50%;
     color: white;
     size: 20;
     font-size: 14pt;
@@ -34,7 +34,7 @@ input[type=text]:focus {
 }
 
 .guess {
-    width: 750px;
+    width: 50%;
     border: 0.5px solid white;
     padding: 0px;
     margin: 0.5em;
