@@ -2,12 +2,10 @@ import React from 'react'
 import GuessBox from './GuessBox'
 
 const Guesses = ({ guesses }) => {
-  console.log(guesses)
   let blanks = []
   for(let i = 0; i < 6 - guesses.length; i++) {
     blanks.push({ id: i })
   } 
-  console.log('Blanks', blanks)
   return (
     <div>
       {guesses.map((guess) => (

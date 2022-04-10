@@ -2,7 +2,6 @@ import React from 'react'
 
 const Result = ({ id, name, addGuess, guesses, setGuesses, num, setNum }) => {
   const guess = () => {
-    console.log(id)
     addGuess({ id, guesses, setGuesses, num, setNum })
   }
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Guesses from './components/Guesses'
 import Pictures from './components/Pictures'
 import GuessInput from './components/GuessInput'
@@ -10,23 +10,9 @@ for (let i = 0; i < movie_data.items.length; i++) {
   movies[i] = {id: movie_data.items[i].id, name: movie_data.items[i].fullTitle, year: movie_data.items[i].year};
 }
 
-// const movies = [
-//   {id: 0, name: 'The Dark Knight Rises', year: 2012},
-//   {id: 1, name: 'The Batman', year: 2022}
-// ]
-
 const movie = movies[Math.floor(Math.random()*movies.length)]
 console.log("Movie Name: ", movie.name)
-const url = "https://imdb-api.com/API/FullCast/k_p0ydpr03/" + movie.id
-
-fetch(url)
-  .then((response) => {
-    // console.log(response.json())
-    return response.json()
-  })
-  .then(actor_data => {
-    console.log(actor_data.actors[0].name)
-  })
+const url = "https://imdb-api.com/API/FullCast/k_8ufem85h/" + movie.id
 
 const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
   if(num > 5) {
@@ -48,6 +34,15 @@ const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
 const App = () => {
   const [num, setNum] = useState(0)
   const [guesses, setGuesses] = useState([])
+  const [images, setImages] = useState([])
+  useEffect(async () => {
+    const data = await fetch(url)
+    const json_data = await data.json()
+    console.log(json_data.actors.slice(0, 6).map((actor) => actor.image))
+    setImages(json_data.actors.slice(0, 6).map((actor) => actor.image))
+  }, [])
+  console.log(images)
+  // const actors = await getActors()
   return (
     <div align='center'>
       <div align="center"><h1 style={{fontFamily: 'serif', fontSize: '40px', color: 'white'}}>Actordle</h1></div>
@@ -58,7 +53,7 @@ const App = () => {
       <br />
       <div style={{border: '0.5px solid white'}} />
       <br />
-      <Pictures num={num} />
+      <Pictures num={num} urls={images} />
       <GuessInput movies={movies} addGuess={addGuess} guesses={guesses} setGuesses={setGuesses} num={num} setNum={setNum} />
       <br />
     </div>
