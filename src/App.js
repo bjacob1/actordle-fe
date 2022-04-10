@@ -12,7 +12,7 @@ for (let i = 0; i < movie_data.items.length; i++) {
 
 const movie = movies[Math.floor(Math.random()*movies.length)]
 console.log("Movie Name: ", movie.name)
-const url = "https://imdb-api.com/API/FullCast/k_8x8wy8ge/" + movie.id
+const url = "https://imdb-api.com/API/FullCast/k_c6r1n72k/" + movie.id
 const img_url =   'https://kgsearch.googleapis.com/v1/entities:search?query=brad%20pitt&key=[YOUR_API_KEY]'
 
 const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
