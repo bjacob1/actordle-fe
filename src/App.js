@@ -13,6 +13,9 @@ for (let i = 0; i < movie_data.items.length; i++) {
 const movie = { id: 0, name: 'The Batman', year: 2022}
 
 const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
+  if(num > 5) {
+    return
+  }
   if(id === movie.id) {
     let new_arr = guesses
     new_arr.push({ name: movie.name, year: movie.year, correct: true })
