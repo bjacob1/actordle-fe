@@ -4,10 +4,16 @@ import Pictures from './components/Pictures'
 import GuessInput from './components/GuessInput'
 import './index.css'
 
-const movies = [
-  {id: 0, name: 'The Dark Knight Rises', year: 2012},
-  {id: 1, name: 'The Batman', year: 2022}
-]
+let movies = []
+let movie_data = require("./IMDB_Top250Movies.json")
+for (let i = 0; i < movie_data.items.length; i++) {
+  movies[i] = {id: movie_data.items[i].id, name: movie_data.items[i].fullTitle, year: movie_data.items[i].year};
+}
+
+// const movies = [
+//   {id: 0, name: 'The Dark Knight Rises', year: 2012},
+//   {id: 1, name: 'The Batman', year: 2022}
+// ]
 
 const movie = { id: 0, name: 'The Batman', year: 2022}
 
