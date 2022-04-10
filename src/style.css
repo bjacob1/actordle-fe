@@ -1,0 +1,13 @@
+p.hov {
+  cursor: pointer;
+  font-size: 14pt;
+  color: white;
+  font-family: serif
+}
+
+p.hov:hover {
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  font-family: serif
+}

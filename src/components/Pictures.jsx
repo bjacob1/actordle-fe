@@ -2,15 +2,6 @@ import React from 'react'
 import Picture from './Picture'
 
 const Pictures = ({ num, urls }) => {
-  console.log(urls)
-  // const urls = [
-  //   'https://res.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_256,w_256,f_auto,g_faces,z_0.7,q_auto:eco,dpr_1/a7xecb3xykwbkhg4g18k',
-  //   'https://res.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_256,w_256,f_auto,g_faces,z_0.7,q_auto:eco,dpr_1/a7xecb3xykwbkhg4g18k',
-  //   'https://res.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_256,w_256,f_auto,g_faces,z_0.7,q_auto:eco,dpr_1/a7xecb3xykwbkhg4g18k',
-  //   'https://res.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_256,w_256,f_auto,g_faces,z_0.7,q_auto:eco,dpr_1/a7xecb3xykwbkhg4g18k',
-  //   'https://res.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_256,w_256,f_auto,g_faces,z_0.7,q_auto:eco,dpr_1/a7xecb3xykwbkhg4g18k',
-  //   'https://res.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_256,w_256,f_auto,g_faces,z_0.7,q_auto:eco,dpr_1/a7xecb3xykwbkhg4g18k'
-  // ]
   return (
     <div>
       <Picture show={0 <= num} url={urls[0]} />

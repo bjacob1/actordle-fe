@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Result from './Result'
 
 const getResults = ({ term, setRes, movies }) => {
   setRes(movies.filter(movie => movie.name.toLowerCase().includes(term.toLowerCase())))
 }
 
-const useField = ({ type, setRes, movies }) => {
-  const [value, setValue] = useState('')
-
+const useField = ({ value, setValue, type, setRes, movies }) => {
   const onChange = (event) => {
     setValue(event.target.value)
     if(event.target.value === '') {
@@ -46,14 +44,14 @@ const GuessInput = ({ movies, addGuess, guesses, setGuesses, num, setNum }) => {
     fontFamily: 'serif'
   }
   const [results, setResults] = useState([])
-  const guessInput = useField({ type: 'text', setRes: setResults, movies: movies })
+  const [value, setValue] = useState('')
+  const guessInput = useField({ value, setValue, type: 'text', setRes: setResults, movies: movies })
   return (
     <div>
       <input style={inputStyle} placeholder='Search for a movie' {...guessInput} />
       <br />
       {results.map ((result) => (
-        <Result key={result.id} id={result.id} addGuess={addGuess} name={result.name} guesses={guesses} setGuesses={setGuesses} num={num} setNum={setNum} />
-        // <p key={result.id} style={{color: 'white', fontFamily: 'serif', fontSize: '14pt'}} onClick={guess}>{result.name}</p>
+        <Result key={result.id} setValue={setValue} id={result.id} setResults={setResults} addGuess={addGuess} name={result.name} guesses={guesses} setGuesses={setGuesses} num={num} setNum={setNum} />
       ))}
     </div>
   )
