@@ -12,7 +12,7 @@ for (let i = 0; i < movie_data.items.length; i++) {
 
 const movie = movies[Math.floor(Math.random()*movies.length)]
 console.log("Movie Name: ", movie.name)
-const url = "https://imdb-api.com/API/FullCast/k_uyey9p71/" + movie.id
+const url = "https://imdb-api.com/API/FullCast/k_8x8wy8ge/" + movie.id
 const img_url =   'https://kgsearch.googleapis.com/v1/entities:search?query=brad%20pitt&key=[YOUR_API_KEY]'
 
 const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
@@ -23,6 +23,7 @@ const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
     let new_arr = guesses
     new_arr.push({ name: movie.name, year: movie.year, correct: true })
     setGuesses(new_arr)
+    setNum(6)
   } else {
     let currMovie = movies.filter((movie) => movie.id === id)[0]
     let new_arr = guesses
