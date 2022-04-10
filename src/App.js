@@ -49,7 +49,7 @@ const App = () => {
       <div align="center"><h1 style={{fontFamily: 'serif', fontSize: '40px', color: 'white'}}>Actordle</h1></div>
       <div style={{border: '0.5px solid white'}} />
       <br />
-      <Guesses guesses={guesses} />
+      <Guesses guesses={guesses} num={num} />
       <br />
       <br />
       <div style={{border: '0.5px solid white'}} />

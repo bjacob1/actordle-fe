@@ -1,6 +1,13 @@
 import React from 'react'
 
-const GuessBox = ({ name, year, correct }) => {
+const GuessBox = ({ name, year, correct, next }) => {
+  if(next !== undefined && next === true) {
+    return (
+      <div align='center'>
+        <div style={{ width: '750px', border: '1.9px solid white', padding: '0px', margin: '0.5em'}} align='center'><p style={{color: 'white'}}>{name}&nbsp;</p></div>
+      </div>
+    )
+  }
   if(correct === undefined) {
     return (
       <div align='center'>
