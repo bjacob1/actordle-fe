@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
+import Result from './Result'
 
-const getResults = ({ term, setRes }) => {
-  const movies = [
-    {id: 0, name: 'The Dark Knight Rises', year: 2012},
-    {id: 1, name: 'The Batman', year: 2022}
-  ]
+const getResults = ({ term, setRes, movies }) => {
   setRes(movies.filter(movie => movie.name.toLowerCase().includes(term.toLowerCase())))
 }
 
-const useField = ({ type, setRes }) => {
+const useField = ({ type, setRes, movies }) => {
   const [value, setValue] = useState('')
 
   const onChange = (event) => {
@@ -17,7 +14,7 @@ const useField = ({ type, setRes }) => {
       setRes([])
     }
     else {
-      getResults({ term: event.target.value, setRes: setRes })
+      getResults({ term: event.target.value, setRes: setRes, movies: movies })
     }
   } 
 
@@ -26,16 +23,13 @@ const useField = ({ type, setRes }) => {
   }
 }
 
-// const fillField = ({ id, guessField }) => {
-//   guessField.
-// }
-
-const GuessInput = () => {
+const GuessInput = ({ movies, addGuess, guesses, setGuesses, num, setNum }) => {
   const inputStyle = {
     backgroundColor: '#242729',
     border: '0.5px solid white',
     padding: '15px',
-    width: '630px',
+    // width: '630px',
+    width: '750px',
     color: 'white',
     size: '20',
     fontSize: '14pt'
@@ -52,13 +46,14 @@ const GuessInput = () => {
     fontFamily: 'serif'
   }
   const [results, setResults] = useState([])
-  const guessInput = useField({ type: 'text', setRes: setResults })
+  const guessInput = useField({ type: 'text', setRes: setResults, movies: movies })
   return (
     <div>
-      <input style={inputStyle} placeholder='Search for a movie' {...guessInput} />&nbsp;<input style={buttonStyle} type='button' value='Submit' />
+      <input style={inputStyle} placeholder='Search for a movie' {...guessInput} />
       <br /><br />
       {results.map ((result) => (
-        <p key={result.id} style={{color: 'white', fontFamily: 'serif', fontSize: '14pt'}}>{result.name}</p>
+        <Result key={result.id} id={result.id} addGuess={addGuess} name={result.name} guesses={guesses} setGuesses={setGuesses} num={num} setNum={setNum} />
+        // <p key={result.id} style={{color: 'white', fontFamily: 'serif', fontSize: '14pt'}} onClick={guess}>{result.name}</p>
       ))}
     </div>
   )
