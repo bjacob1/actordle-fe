@@ -50,10 +50,10 @@ const App = () => {
       <div style={{border: '0.5px solid white'}} />
       <br />
       <Guesses guesses={guesses} num={num} />
-      <br />
+      {/* <br />
       <br />
       <div style={{border: '0.5px solid white'}} />
-      <br />
+      <br /> */}
       <Pictures num={num} urls={images} />
       <GuessInput movies={movies} addGuess={addGuess} guesses={guesses} setGuesses={setGuesses} num={num} setNum={setNum} />
       <br />
