@@ -5,7 +5,7 @@ import GuessInput from './components/GuessInput'
 import './index.css'
 
 let movies = []
-let movie_data = require("./IMDB_MostPopularMovies.json")
+let movie_data = require("./MovieList2.json")
 for (let i = 0; i < movie_data.items.length; i++) {
   movies[i] = {id: movie_data.items[i].id, name: movie_data.items[i].fullTitle, year: movie_data.items[i].year};
 }
@@ -46,7 +46,7 @@ const App = () => {
   }, [])
   return (
     <div align='center'>
-      <div align="center"><h1 style={{fontFamily: 'serif', fontSize: '40px', color: 'white'}}>Actordle</h1></div>
+      <div align="center"><h1>Actordle</h1></div>
       <div style={{border: '0.5px solid white'}} />
       <br />
       <Guesses guesses={guesses} />

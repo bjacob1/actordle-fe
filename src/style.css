@@ -1,4 +1,9 @@
 
+h1 {
+    font-family: serif;
+    font-size: 40px;
+    color: white;
+}
 
 p.result {
     cursor: pointer;
