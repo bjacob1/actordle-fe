@@ -50,7 +50,7 @@ const GuessInput = ({ movies, addGuess, guesses, setGuesses, num, setNum }) => {
   return (
     <div>
       <input style={inputStyle} placeholder='Search for a movie' {...guessInput} />
-      <br /><br />
+      <br />
       {results.map ((result) => (
         <Result key={result.id} id={result.id} addGuess={addGuess} name={result.name} guesses={guesses} setGuesses={setGuesses} num={num} setNum={setNum} />
         // <p key={result.id} style={{color: 'white', fontFamily: 'serif', fontSize: '14pt'}} onClick={guess}>{result.name}</p>

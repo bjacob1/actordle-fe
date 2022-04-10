@@ -28,29 +28,17 @@ fetch(url)
     console.log(actor_data.actors[0].name)
   })
 
-// const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
-//   if(id === movie.id) {
-//     setGuesses(guesses.push({ name: movie.name, year: movie.year, correct: true }))
-//   } else {
-//     let currMovie = movies.filter((movie_id) => movie_id === id)[0]
-//     setGuesses(guesses.push({ name: currMovie.name, year: currMovie.year, correct: false }))
-//   }
-// }
-
 const addGuess = ({ id, guesses, setGuesses, num, setNum }) => {
   if(id === movie.id) {
     let new_arr = guesses
     new_arr.push({ name: movie.name, year: movie.year, correct: true })
     setGuesses(new_arr)
-    // setGuesses(guesses.push({ name: movie.name, year: movie.year, correct: true }))
   } else {
     let currMovie = movies.filter((movie) => movie.id === id)[0]
     let new_arr = guesses
     new_arr.push({ name: currMovie.name, year: currMovie.year, correct: false })
     setGuesses(new_arr)
-    // setGuesses(guesses.push({ name: currMovie.name, year: currMovie.year, correct: false }))
   }
-  // console.log('After', guesses)
   setNum(num + 1)
 }
 
@@ -60,7 +48,6 @@ const App = () => {
   return (
     <div align='center'>
       <div align="center"><h1 style={{fontFamily: 'serif', fontSize: '40px', color: 'white'}}>Actordle</h1></div>
-      {/* <hr style={{ height: '2px'}} /> */}
       <div style={{border: '0.5px solid white'}} />
       <br />
       <Guesses guesses={guesses} />
@@ -68,7 +55,7 @@ const App = () => {
       <br />
       <div style={{border: '0.5px solid white'}} />
       <br />
-      <Pictures num={5} />
+      <Pictures num={num} />
       <GuessInput movies={movies} addGuess={addGuess} guesses={guesses} setGuesses={setGuesses} num={num} setNum={setNum} />
       <br />
     </div>
