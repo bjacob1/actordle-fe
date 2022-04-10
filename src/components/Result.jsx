@@ -1,4 +1,5 @@
 import React from 'react'
+import '../style.css'
 
 const Result = ({ id, name, addGuess, guesses, setGuesses, num, setNum }) => {
   const guess = () => {
@@ -6,7 +7,7 @@ const Result = ({ id, name, addGuess, guesses, setGuesses, num, setNum }) => {
   }
   return (
     <div>
-      <p style={{cursor: 'pointer', color: 'white', fontFamily: 'serif', fontSize: '14pt'}} onClick={guess}>{name}</p>
+      <p class="result" onClick={guess}>{name}</p>
     </div>
   )
 }
